@@ -8,3 +8,7 @@
 * [Price Oracle](architecture/price-oracle.md)
 * [Issuer](architecture/issuer.md)
 * [Lender](architecture/lender.md)
+
+***
+
+* [Frequently Asked Questions](frequently-asked-questions.md)
