@@ -17,12 +17,12 @@
 7. **How do the off-chain and on-chain components interact?**\
    The off-chain component (managed by Hedgehog LTD) handles share acquisition, tokenization, and reserve management. Meanwhile, the on-chain smart contracts (PriceOracle, Issuer, and Lender) manage token valuation, minting/burning, and lending operations. Together, they create a seamless bridge between traditional financial assets and blockchain-based lending.
 8. **What are the key functions of the Issuer contract?**\
-   The Issuer is responsible for creating and managing the tokenized assets. It mints tokens when shares are acquired and burns them upon redemption, maintaining a strict one-to-one asset backing. It also enables token transactions in USDC and incorporates KYC processes to ensure regulatory compliance.
+   The Issuer is responsible for creating and managing the tokenized assets. It mints tokens when shares are acquired and burns them upon redemption, maintaining a strict one-to-one asset backing. It also enables token transactions in KES and incorporates KYC processes to ensure regulatory compliance.
 9. **How does the Lender contract facilitate borrowing and ensure over-collateralization?**\
    The Lender contract sets up dedicated lending pools for each tokenized asset. Users borrow USDC by providing tokenized shares as collateral. The system requires borrowers to over-collateralize (125% of the loan value) and mandates a 110% repayment, with an automatic liquidation trigger if collateral values drop to 90% of the initial value.
 10. **What risk control mechanisms are integrated into Hedgehog?**\
     Hedgehog employs several safeguards:
-    * **Dynamic Liquidity Management:** Ensures sufficient USDC reserves.
+    * **Dynamic Liquidity Management:** Ensures sufficient KES reserves.
     * **Real-Time Price Updates:** Keeps token valuations current via the PriceOracle.
     * **Over-Collateralization:** Borrowers must maintain collateral above the loan amount.
     * **Automated Liquidation:** Triggers if collateral value falls too low.
@@ -39,3 +39,9 @@
 15. **How does lending work**
 
     Users can provide liquidity into lending pools for specific assets and get back liquidity pool tokens that represent their share of the pool.
+16. **How does purchasing tokens work**
+
+    To purchase a token for a specific asset, you pay KES to the Issuer smart contract and it will deposit the equivalent amount of the token in your wallet.
+17. How does selling work.
+
+    To sell a token you send the token you want sold to the Issuer and it will deposit the current valuation based on the latest updated price from the oracle to your account.
